@@ -1,1 +1,7 @@
+/app/cache/*
+/app/logs/*
+!/app/cache/.gitkeep
+!/app/logs/.gitkeep
+/src/*
+!/src/.gitkeep
 /vendor/
