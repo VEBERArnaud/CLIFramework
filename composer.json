@@ -17,6 +17,7 @@
         "symfony/dependency-injection": "~3.0",
         "symfony/event-dispatcher": "~3.0",
         "symfony/http-kernel": "~3.0",
+        "symfony/monolog-bundle": "~2.8",
         "symfony/yaml": "~3.0",
         "incenteev/composer-parameter-handler": "~2.1"
     },
