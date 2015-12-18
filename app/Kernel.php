@@ -44,6 +44,7 @@ class Kernel extends BaseKernel
     {
         // register bundles for every environment
         $bundles = array(
+            new \Symfony\Bundle\MonologBundle\MonologBundle(),
         );
 
         // register bundles for dev & test environment only
