@@ -1,5 +1,7 @@
 checks:
     php:
+        code_rating: true
+        duplication: true
         uppercase_constants: true
         return_doc_comments: true
         use_self_instead_of_fqcn: true
