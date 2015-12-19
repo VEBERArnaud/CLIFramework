@@ -18,7 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  *
  */
-class Command extends BaseCommand
+abstract class Command extends BaseCommand
 {
     /**
      * configure
@@ -32,22 +32,44 @@ class Command extends BaseCommand
     }
 
     /**
+     * Get command name
+     *
+     * @return string
+     */
+    abstract protected function getCommandName();
+
+    /**
+     * Get command description
+     *
+     * @return string
+     */
+    abstract protected function getCommandDescription();
+
+    /**
      * Get kernel.
      *
      * @return \Symfony\Component\HttpKernel\KernelInterface
+     *
+     * @throws \RuntimeException
      */
     protected function getKernel()
     {
-        return $this->getApplication()->getKernel();
+        $application = $this->getApplication();
+        if (!$application instanceof \CLIFramework\Application) {
+            throw new \RuntimeException('Application should be an instance of \CLIFramework\Application');
+        }
+        return $application->getKernel();
     }
 
     /**
      * Get Container.
      *
      * @return \Symfony\Component\DependencyInjection\ContainerInterface
+     *
+     * @throws \RuntimeException
      */
     protected function getContainer()
     {
-        return $this->getApplication()->getKernel()->getContainer();
+        return $this->getKernel()->getContainer();
     }
 }

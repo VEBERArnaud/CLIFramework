@@ -24,8 +24,6 @@ class Kernel extends BaseKernel
      *
      * @param string $environment
      * @param boolean $debug
-     *
-     * @return void
      */
     public function __construct($environment, $debug)
     {
@@ -46,10 +44,6 @@ class Kernel extends BaseKernel
         $bundles = array(
             new \Symfony\Bundle\MonologBundle\MonologBundle(),
         );
-
-        // register bundles for dev & test environment only
-        if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
-        }
 
         return $bundles;
     }
