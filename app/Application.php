@@ -16,13 +16,25 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
  * Application.
  */
 class Application extends BaseApplication
 {
+    /**
+     * name
+     *
+     * @const NAME
+     */
     const NAME = 'CLIFramework';
+
+    /**
+     * version
+     *
+     * @const VERSION
+     */
     const VERSION = '0.0.1-dev';
 
     /**
@@ -42,11 +54,9 @@ class Application extends BaseApplication
     /**
      * Construct the application.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-     *
-     * @return void
+     * @param \Symfony\Component\HttpKernel\KernelInterface $kernel
      */
-    public function __construct(Kernel $kernel)
+    public function __construct(KernelInterface $kernel)
     {
         $this->kernel = $kernel;
         $this->container = $kernel->getContainer();
