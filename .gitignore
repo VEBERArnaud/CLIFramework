@@ -2,6 +2,7 @@
 /app/logs/*
 !/app/cache/.gitkeep
 !/app/logs/.gitkeep
+/build/
 /src/*
 !/src/.gitkeep
 /vendor/

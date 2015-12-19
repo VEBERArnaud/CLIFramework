@@ -49,6 +49,8 @@ abstract class Command extends BaseCommand
      * @return \Symfony\Component\HttpKernel\KernelInterface
      *
      * @throws \RuntimeException
+     *
+     * @codeCoverageIgnore
      */
     protected function getKernel()
     {
@@ -56,6 +58,7 @@ abstract class Command extends BaseCommand
         if (!$application instanceof \CLIFramework\Application) {
             throw new \RuntimeException('Application should be an instance of \CLIFramework\Application');
         }
+
         return $application->getKernel();
     }
 
@@ -64,7 +67,7 @@ abstract class Command extends BaseCommand
      *
      * @return \Symfony\Component\DependencyInjection\ContainerInterface
      *
-     * @throws \RuntimeException
+     * @codeCoverageIgnore
      */
     protected function getContainer()
     {
