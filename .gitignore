@@ -7,3 +7,4 @@
 !/src/.gitkeep
 /vendor/
 /app/config/base/parameters.yml
+.env
