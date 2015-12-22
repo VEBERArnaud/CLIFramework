@@ -19,31 +19,6 @@ use Symfony\Component\Console\Command\Command as BaseCommand;
 abstract class Command extends BaseCommand
 {
     /**
-     * configure
-     *
-     * @return void
-     */
-    public function configure()
-    {
-        $this->setName($this->getCommandName());
-        $this->setDescription($this->getCommandDescription());
-    }
-
-    /**
-     * Get command name
-     *
-     * @return string
-     */
-    abstract protected function getCommandName();
-
-    /**
-     * Get command description
-     *
-     * @return string
-     */
-    abstract protected function getCommandDescription();
-
-    /**
      * Get kernel.
      *
      * @return \Symfony\Component\HttpKernel\KernelInterface
