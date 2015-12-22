@@ -1,3 +1,6 @@
 parameters:
 
 services:
+    event_dispatcher:
+        class: Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher
+        arguments: ['@service_container']
