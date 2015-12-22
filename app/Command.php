@@ -12,12 +12,16 @@
 namespace CLIFramework;
 
 use Symfony\Component\Console\Command\Command as BaseCommand;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 /**
  *
  */
-abstract class Command extends BaseCommand
+class Command extends BaseCommand implements ContainerAwareInterface
 {
+    use ContainerAwareTrait;
+
     /**
      * Get kernel.
      *
@@ -41,11 +45,9 @@ abstract class Command extends BaseCommand
      * Get Container.
      *
      * @return \Symfony\Component\DependencyInjection\ContainerInterface
-     *
-     * @codeCoverageIgnore
      */
     protected function getContainer()
     {
-        return $this->getKernel()->getContainer();
+        return $this->container;
     }
 }
