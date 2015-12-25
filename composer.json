@@ -19,7 +19,6 @@
         "symfony/http-kernel": "~2.8",
         "symfony/monolog-bundle": "~2.8",
         "symfony/yaml": "~2.8",
-        "incenteev/composer-parameter-handler": "~2.1",
         "vlucas/phpdotenv": "~2.1"
     },
     "require-dev": {
@@ -36,14 +35,6 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
-        ],
-        "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
-        ]
     },
     "extra": {
         "incenteev-parameters": {
